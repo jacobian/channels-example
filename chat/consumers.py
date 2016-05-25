@@ -53,7 +53,7 @@ def ws_receive(message):
     try:
         data = json.loads(message['text'])
     except ValueError:
-        log.debug("ws message isn't json text=%s", text)
+        log.debug("ws message isn't json text=%s", message['text'])
         return
     
     if set(data.keys()) != set(('handle', 'message')):
