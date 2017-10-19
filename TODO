@@ -8,3 +8,4 @@ Possible future improvements:
     - list of people who are "here"?
 - include old-school django POST view?
     might make a good flow for the article, start with old-style and then add WSS
+- can you help me deploying this un pythonanywhere or locally as heroku requires a credit card?
