@@ -34,6 +34,11 @@ def ws_connect(message):
     Group('chat-'+label, channel_layer=message.channel_layer).add(message.reply_channel)
 
     message.channel_session['room'] = room.label
+    # in order to establish the connection (as of Django 1.10 or so), it must be accepted
+    # see https://stackoverflow.com/questions/41817871/websocket-using-django-channels
+    message.reply_channel.send({
+        'accept': True
+    })
 
 @channel_session
 def ws_receive(message):
